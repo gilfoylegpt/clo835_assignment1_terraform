@@ -11,7 +11,7 @@
     sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
     rm -f ./kubectl
     
-cat <<EOF > /tmp/kind.yaml
+sudo -u ec2-user bash -c 'cat <<EOF > /home/ec2-user/kind.yaml
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -22,7 +22,5 @@ nodes:
     hostPort: 30000
   - containerPort: 30001
     hostPort: 30001
-EOF
-sudo chmod 777 /tmp/kind.yaml
-kind create cluster --config /tmp/kind.yaml
-    
+EOF'
+sudo -u ec2-user kind create cluster --config /home/ec2-user/kind.yaml
