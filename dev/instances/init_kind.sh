@@ -23,4 +23,4 @@ nodes:
   - containerPort: 30001
     hostPort: 30001
 EOF'
-sudo -u ec2-user kind create cluster --config /home/ec2-user/kind.yaml
+sudo -u ec2-user /usr/local/bin/kind create cluster --config /home/ec2-user/kind.yaml
