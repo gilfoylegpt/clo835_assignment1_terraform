@@ -23,6 +23,6 @@ nodes:
   - containerPort: 30001
     hostPort: 30001
 EOF
-
- kind create cluster --config /tmp/kind.yaml
+sudo chmod 777 /tmp/kind.yaml
+kind create cluster --config /tmp/kind.yaml
     
