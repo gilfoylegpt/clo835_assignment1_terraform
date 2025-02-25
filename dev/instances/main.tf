@@ -82,6 +82,11 @@ resource "aws_instance" "my_amazon" {
     create_before_destroy = true
   }
 
+   root_block_device {
+    volume_size = 50  
+    volume_type = "gp3"  
+  }
+
   tags = merge(local.default_tags,
     {
       "Name" = "${local.name_prefix}-Amazon-Linux"
